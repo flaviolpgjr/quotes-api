@@ -45,7 +45,40 @@ o objeto:
 	}
 
 ```
+
 ![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img1.png)
+
+2. Para logar na API, e pegar o JWT, acesse a url via POST ``localhost:3000/user_token```, passando
+os dados previamente cadastrados: 
+
+```
+	{
+		"auth":{
+			"email":"usuarioexemplo@gmail.com",
+			"password":"123456"
+		
+		}
+	}
+
+```
+A API, ira retornar um JWT nesse formato:
+
+```
+
+"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQzNzI0OTgsInN1YiI6eyIkb2lkIjoiNWI3MzU5MGFhNTZlMDQwZmIwM2JjODY1In19.YW6eylabPG5tfTxUOK2vjetu4poYB8WGaJHU-ucrmOw"
+
+```
+
+![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img2.png)
+
+3. Após logado, deve-se setar no header Authorization do postman, precedido da palavra Bearer, o seu jwt, ficando dessa forma:
+
+![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img3.png)
+
+4. Agora, para fazer a pesquisa utilize a URL ```localhost:3000/quotes/:tag``` através do método GET, onde :tag é a tag que será pesquisada:
+
+![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img4.png)
+
 
 
 
