@@ -5,8 +5,12 @@ API que faz um crawler da primeira pagina do site http://quotes.toscrape.com/, e
 ### Solução
 
 Foi desenvolvida uma API em rails 5, utilizando a gem Kaminari para realizar o parser das informações vindas do site, para salvar as informações
-retornadas do site foi utilizado o mondoDB(gem mongoid), para a autenticação utilizei JWT(gem Knock), na parte de busca principal foi utilizado services,
+retornadas do site foi utilizado o mondoDB(gem mongoid), para a autenticação foi utilizado JWT(gem Knock), na parte de busca principal foi utilizado services,
 com a finalidade de retirar a logica de busca e parser do controller.
+
+### Funcionamento Basico
+
+Toda vez que uma tag é pesquisada, verifica-se no banco se a tag pesquisada foi previamente salva, se não tiver sido, realiza-se o parser das informações do site, e salva os dados retornados no banco, caso a tag pesquisada estiver em banco, realiza-se uma busca interna das frases que contém a tag.
 
 #### Tecnologias
 * Rails 5.x
@@ -22,7 +26,27 @@ com a finalidade de retirar a logica de busca e parser do controller.
 2. Caso o mongoDB não esteja iniciado, inicie ele através do comando: ```sudo service mongod start```
 3. Caso queira gerar um usuário padrão para login(email:teste@gmail.com, password:abc123), execute o comando: ```rails db:seed```
 4. Por ultimo start o servidor, através do comando: ``` rails server ``` ou ``` rails s ```
-Não se esqueça de manter o terminal aberto.
+não se esqueça de manter o terminal aberto.
+
+### Utilizando a API
+
+Recomenda-se usar o postman para teste da API.
+
+1. Caso não tenha dado o comando ```rails db:seed```, ou caso queira cadastrar um novo usuário, acesse a url via POST ```localhost:3000/user/register```, passando
+o objeto: 
+
+```
+	{
+		"auth":{
+			"email":"usuarioexemplo@gmail.com",
+			"password":"123456"
+		
+		}
+	}
+
+```
+![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img1.png)
+
 
 
 
