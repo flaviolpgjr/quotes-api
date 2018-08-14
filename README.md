@@ -1,24 +1,11 @@
-# README
+# QUOTES-API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+API que faz um crawler da primeira pagina do site http://quotes.toscrape.com/, e realiza um cache com mongoDB.
 
-Things you may want to cover:
+### Solução
 
-* Ruby version
+Foi desenvolvida uma API em rails 5, utilizando a gem Kaminari para realizar o parser das informações vindas do site, e para salvar as informações
+retornadas do site, foi utilizado o mondoDB, para a autenticação utilizei JWT (gem Knock), internamente foi utilizado services, para abstrair toda 
+a lógica de busca, do controller principal.
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
