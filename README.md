@@ -77,7 +77,7 @@ o objeto:
 
 ![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img1.png)
 
-2. Para logar na API, e pegar o JWT, acesse a url via POST ``localhost:3000/user_token```, passando
+2. Para logar na API, e pegar o JWT, acesse a url via POST ```localhost:3000/user_token```, passando
 os dados previamente cadastrados: 
 
 ```
