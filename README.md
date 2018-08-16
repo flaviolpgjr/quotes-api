@@ -4,9 +4,11 @@ API que faz um crawler da primeira pagina do site http://quotes.toscrape.com/, e
 
 ### Solução
 
-Foi desenvolvida uma API em rails 5, utilizando a gem Kaminari para realizar o parser das informações vindas do site, para salvar as informações
+Foi desenvolvida uma API em rails 5, utilizando a gem nokogiri para realizar o parser das informações vindas do site, para salvar as informações
 retornadas do site foi utilizado o mondoDB(gem mongoid), para a autenticação foi utilizado JWT(gem Knock), na parte de busca principal foi utilizado services,
 com a finalidade de retirar a logica de busca e parser do controller.
+
+Para os testes, foram utilizadas as gems rspec-rails e mongoid-rspec
 
 ### Funcionamento Basico
 
@@ -78,6 +80,11 @@ A API, ira retornar um JWT nesse formato:
 4. Agora, para fazer a pesquisa utilize a URL ```localhost:3000/quotes/:tag``` através do método GET, onde :tag é a tag que será pesquisada:
 
 ![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img4.png)
+
+### Rodar os testes
+
+1. Dentro da pasta do projeto, caso não tenha instalado as dependências, execute o comando ```bundle install```, para instalar as dependências.
+2. Caso esteja com as dependências instaladas, basta executar o comando rspec dentro da pasta do projeto.
 
 
 
