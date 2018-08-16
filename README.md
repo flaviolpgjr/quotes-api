@@ -5,7 +5,7 @@ API que faz um crawler da primeira pagina do site http://quotes.toscrape.com/, e
 ### Solução
 
 Foi desenvolvida uma API em rails 5, utilizando a gem nokogiri para realizar o parser das informações vindas do site, para salvar as informações
-retornadas do site foi utilizado o mondoDB(gem mongoid), para a autenticação foi utilizado JWT(gem Knock), na parte de busca principal foi utilizado services,
+retornadas do site foi utilizado o mondoDB(gem mongoid), para a autenticação foi utilizado JWT(gem knock), na parte de busca principal foi utilizado services,
 com a finalidade de retirar a logica de busca e parser do controller.
 
 Para os testes, foram utilizadas as gems rspec-rails e mongoid-rspec.
