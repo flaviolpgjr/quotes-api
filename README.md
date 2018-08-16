@@ -15,20 +15,47 @@ Para os testes, foram utilizadas as gems rspec-rails e mongoid-rspec.
 Toda vez que uma tag é pesquisada, verifica-se no banco se a tag pesquisada foi previamente salva, se não tiver sido, realiza-se o parser das informações do site, e salva os dados retornados no banco, caso a tag pesquisada estiver em banco, realiza-se uma busca interna das frases que contém a tag.
 
 #### Tecnologias
+
 * Rails 5.x
 * MongoDB 4.x
 
 #### Pré-requisitos
+
 - Ruby 2.3.x - [Instalação](https://gorails.com/setup/ubuntu/18.04#ruby)
 - Rails 5.1.x - [Instalação](https://gorails.com/setup/ubuntu/18.04#rails)
 - MongoDB 4.x - [Instalação](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
 
-#### Rodando o projeto
+##### Se for utilizar o Docker basta instalar:
+
+- Docker - [Instalação] (https://docs.docker.com/engine/installation/)
+- Docker Compose - [Instalação] (https://docs.docker.com/compose/)
+
+### Rodando o projeto
+
+#### Através do docker
+
+1. Dentro da pasta do projeto execute ```docker-compose build```
+2. Caso queira criar o usuario padrão para login(email:teste@gmail.com, password:abc123), execute o comando ```docker-compose run website rails db:seed```
+3. Para subir a aplicação utilize o comando ```docker-compose up```
+
+#### Sem usar docker
+
 1. Dentro da pasta quotes-api instale as dependências com o comando: ```bundle install ```
 2. Caso o mongoDB não esteja iniciado, inicie ele através do comando: ```sudo service mongod start```
 3. Caso queira gerar um usuário padrão para login(email:teste@gmail.com, password:abc123), execute o comando: ```rails db:seed```
 4. Por ultimo start o servidor, através do comando: ``` rails server ``` ou ``` rails s ```
 não se esqueça de manter o terminal aberto.
+
+### Realizando os testes
+
+#### Através do docker
+
+1. Execute o comando ```docker-compose run website rspec``` 
+
+#### Sem usar o docker
+
+1. Dentro da pasta do projeto, caso não tenha instalado as dependências, execute o comando ```bundle install```, para instalar as dependências.
+2. Execute o comando ```rspec``` dentro da pasta do projeto.
 
 ### Utilizando a API
 
@@ -81,10 +108,7 @@ A API, ira retornar um JWT nesse formato:
 
 ![alt text](https://github.com/flaviolpgjr/quotes-api/blob/master/images/img4.png)
 
-### Rodar os testes
 
-1. Dentro da pasta do projeto, caso não tenha instalado as dependências, execute o comando ```bundle install```, para instalar as dependências.
-2. Caso esteja com as dependências instaladas, basta executar o comando rspec dentro da pasta do projeto.
 
 
 
